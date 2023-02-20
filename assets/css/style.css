@@ -1,0 +1,282 @@
+/* https://www.cufonfonts.com/font/galano-grotesque-alt#google_vignette */
+
+@font-face {
+  font-family: "GalanoGrotesqueAltRegular";
+  src: url(/assets/fonts/GalanoGrotesqueAltRegular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "GalanoGrotesqueAltBold";
+  src: url(/assets/fonts/GalanoGrotesqueAltBold.otf) format("truetype");
+}
+
+:root {
+  /* colors */
+
+  --primary-color: #2dcacf;
+  --secondary-color: #0f0028;
+
+  /* font-families */
+  --secondary-font-family: "Archivo", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3ffff;
+  font-family: "GalanoGrotesqueAltRegular";
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  height: 100%;
+  width: 100%;
+  margin-top: 25px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .navigation-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+}
+
+nav .navigation-buttons ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+}
+
+nav .navigation-menu ul li a,
+nav .navigation-buttons ul li a {
+  text-decoration: none;
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-color);
+}
+
+nav .navigation-buttons ul li a {
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-color);
+}
+
+nav .navigation-menu ul li {
+  padding: 13px 0 36px 0;
+}
+
+nav .navigation-buttons ul li {
+  padding: 13px 0 36px 0;
+}
+
+header .bottom-border {
+  opacity: 0.4;
+  border: 2px solid #dce4ff;
+}
+
+nav .logo {
+  padding: 0.268rem 0 0.93rem 0;
+}
+
+nav .navigation-buttons .btn {
+  background: #2dcacf;
+  box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
+  border-radius: 100px;
+  padding: 14px 31px 13px 31px;
+  color: #e5e5e5;
+}
+
+main .nft-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "item-1 item-2 item-3";
+  align-items: center;
+}
+
+.item-1 {
+  grid-area: item-1;
+}
+
+.item-2 {
+  grid-area: item-2;
+}
+
+.item-3 {
+  grid-area: item-3;
+}
+
+main .nft-banner .banner-left {
+  padding-top: 154px;
+}
+
+main .nft-banner .banner-left .head-section h2 {
+  font-family: "GalanoGrotesqueAltBold";
+  font-size: 58px;
+  line-height: 114.5%;
+  letter-spacing: -0.005em;
+  color: #0f0028;
+}
+
+span {
+  color: #2dcacf;
+}
+
+main .nft-banner .banner-left .head-section p {
+  padding-top: 30.41px;
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 173%;
+  letter-spacing: -0.01em;
+  color: #0f0028;
+}
+
+main .nft-banner .banner-left .head-section .collection {
+  padding-top: 3.349rem;
+}
+
+main .nft-banner .banner-left .head-section .collection a {
+  text-decoration: none;
+  background: #2dcacf;
+  box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
+  border-radius: 100px;
+  padding: 22px 51px 22px 34px;
+  color: #e5e5e5;
+}
+
+/* main .nft-banner .banner-left .head-section .collection .arrow {
+  padding: 1.804rem 1.652rem 1.804rem;
+} */
+
+main .nft-banner .banner-left .head-section .last-section {
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 96%;
+  color: #000000;
+  padding-top: 128px;
+}
+
+main .nft-banner .banner-left .head-section .social-media-group {
+  margin-top: 22px;
+}
+
+main .nft-banner .banner-right .nft-card {
+  background: #faffff;
+  box-shadow: 0px 43px 90px -16px rgba(44, 181, 185, 0.14);
+  border-radius: 31px;
+}
+
+main .nft-banner .banner-right .nft-bid-area {
+  background: #e8ffff;
+  border-radius: 16px;
+}
+
+main .nft-banner .banner-right .nft-bid-area h5 {
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 96%;
+  color: #0f0028;
+  padding: 18px 154px 0 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+main .nft-banner .banner-right .nft-card .card-title {
+  padding: 34px 78px 0 37px;
+  font-family: "GalanoGrotesqueAltBold";
+  font-size: 23px;
+  line-height: 173%;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  color: #0f0028;
+}
+
+main .nft-banner .banner-right .nft-bid-area {
+  margin: 15px 37px 25px 37px;
+}
+
+main .nft-banner .banner-right .card-details ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 14px 0;
+}
+
+main .nft-banner .banner-right .card-details ul li .ethereum {
+  padding: 0 10px 0 24px;
+}
+
+main .nft-banner .banner-right .nft-card-actions ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+main .nft-banner .banner-right .nft-card-actions ul li a {
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14.9557px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+
+main .nft-banner .banner-right .nft-card-actions ul .bid {
+  text-decoration: none;
+  background: #2dcacf;
+  box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
+  border-radius: 100px;
+  padding: 12px 10px;
+  color: #e5e5e5;
+  margin: 0 28px 35px;
+}
+
+main .nft-banner .banner-right .contribution-section {
+  margin-top: 43px;
+}
