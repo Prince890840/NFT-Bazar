@@ -81,7 +81,7 @@ nav .navigation-buttons ul li a {
   font-size: 18px;
   line-height: 20px;
   letter-spacing: 0.01em;
-
+  position: relative;
   color: var(--secondary-color);
 }
 
@@ -94,6 +94,20 @@ nav .navigation-buttons ul li a {
   letter-spacing: 0.01em;
 
   color: var(--secondary-color);
+}
+
+nav .navigation-menu ul li a:hover {
+  color: var(--primary-color);
+}
+
+nav .navigation-menu ul li a:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 20%;
+  height: 2px;
+  background-color: var(--primary-color);
 }
 
 nav .navigation-menu ul li {
@@ -114,11 +128,12 @@ nav .logo {
 }
 
 nav .navigation-buttons .btn {
-  background: #2dcacf;
+  background: var(--primary-color);
   box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
   padding: 14px 31px 13px 31px;
   color: #e5e5e5;
+  transition: all 0.2s ease-in-out;
 }
 
 main .nft-banner {
@@ -126,6 +141,7 @@ main .nft-banner {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "item-1 item-2 item-3";
   align-items: center;
+  column-gap: 14.85px;
 }
 
 .item-1 {
@@ -149,11 +165,11 @@ main .nft-banner .banner-left .head-section h2 {
   font-size: 58px;
   line-height: 114.5%;
   letter-spacing: -0.005em;
-  color: #0f0028;
+  color: var(--secondary-color);
 }
 
 span {
-  color: #2dcacf;
+  color: var(--primary-color);
 }
 
 main .nft-banner .banner-left .head-section p {
@@ -164,7 +180,7 @@ main .nft-banner .banner-left .head-section p {
   font-size: 22px;
   line-height: 173%;
   letter-spacing: -0.01em;
-  color: #0f0028;
+  color: var(--secondary-color);
 }
 
 main .nft-banner .banner-left .head-section .collection {
@@ -173,7 +189,7 @@ main .nft-banner .banner-left .head-section .collection {
 
 main .nft-banner .banner-left .head-section .collection a {
   text-decoration: none;
-  background: #2dcacf;
+  background: var(--primary-color);
   box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
   padding: 22px 51px 22px 34px;
@@ -198,6 +214,12 @@ main .nft-banner .banner-left .head-section .social-media-group {
   margin-top: 22px;
 }
 
+main .nft-banner .banner-right {
+  padding-top: 154px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 main .nft-banner .banner-right .nft-card {
   background: #faffff;
   box-shadow: 0px 43px 90px -16px rgba(44, 181, 185, 0.14);
@@ -215,7 +237,7 @@ main .nft-banner .banner-right .nft-bid-area h5 {
   font-weight: 400;
   font-size: 18px;
   line-height: 96%;
-  color: #0f0028;
+  color: var(--secondary-color);
   padding: 18px 154px 0 24px;
 }
 
@@ -234,7 +256,7 @@ main .nft-banner .banner-right .nft-card .card-title {
   line-height: 173%;
   white-space: nowrap;
   letter-spacing: -0.01em;
-  color: #0f0028;
+  color: var(--secondary-color);
 }
 
 main .nft-banner .banner-right .nft-bid-area {
@@ -258,6 +280,10 @@ main .nft-banner .banner-right .nft-card-actions ul {
   align-items: center;
 }
 
+main .nft-banner .banner-right .nft-card-actions ul li {
+  margin-bottom: 34px;
+}
+
 main .nft-banner .banner-right .nft-card-actions ul li a {
   font-family: var(--secondary-font-family);
   font-style: normal;
@@ -269,7 +295,7 @@ main .nft-banner .banner-right .nft-card-actions ul li a {
 
 main .nft-banner .banner-right .nft-card-actions ul .bid {
   text-decoration: none;
-  background: #2dcacf;
+  background: var(--primary-color);
   box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
   padding: 12px 10px;
@@ -279,4 +305,43 @@ main .nft-banner .banner-right .nft-card-actions ul .bid {
 
 main .nft-banner .banner-right .contribution-section {
   margin-top: 43px;
+}
+
+main .nft-banner .banner-right .contribution-section h3 {
+  font-family: "GalanoGrotesqueAltBold";
+  font-size: 23px;
+  line-height: 173%;
+  letter-spacing: -0.01em;
+  color: var(--secondary-color);
+}
+
+main .nft-banner .banner-right .contribution-section .image-1 {
+  padding-top: 15px;
+}
+
+main .nft-banner .banner-right .contribution-section .image-2 {
+  margin-top: 24.5px;
+}
+
+main .nft-banner .banner-right .fueler-section {
+  margin-top: 75px;
+}
+
+main .nft-banner .banner-right .fueler-section p {
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 96%;
+  color: var(--secondary-color);
+}
+
+main .nft-banner .banner-right .fueler-section .fueler-sec-paragraph {
+  color: var(--primary-color);
+}
+
+main .nft-banner .banner-right .fueler-section .setting-icon {
+  display: inline-block;
+  max-width: 20.62px;
+  max-height: 19.8px;
 }
