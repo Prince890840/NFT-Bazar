@@ -8,6 +8,7 @@
 @font-face {
   font-family: "GalanoGrotesqueAltBold";
   src: url(/assets/fonts/GalanoGrotesqueAltBold.otf) format("truetype");
+  font-weight: 700;
 }
 
 :root {
@@ -15,6 +16,12 @@
 
   --primary-color: #2dcacf;
   --secondary-color: #0f0028;
+  --border-color: #dce4ff;
+  --body-background-color: #f3ffff;
+  --white-color: #ffffff;
+  --nft-card-bg-color: #e8ffff;
+  --navigation-bar-bg-color: rgb(169, 227, 246);
+  --power-text-color: #061f6a;
 
   /* font-families */
   --secondary-font-family: "Archivo", sans-serif;
@@ -24,12 +31,14 @@
 *::after,
 *::before {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background: #f3ffff;
+  background: var(--body-background-color);
   font-family: "GalanoGrotesqueAltRegular";
+  max-width: 100%;
 }
 
 .wrapper {
@@ -48,6 +57,7 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 nav .navigation-menu ul {
@@ -96,11 +106,13 @@ nav .navigation-buttons ul li a {
   color: var(--secondary-color);
 }
 
-nav .navigation-menu ul li a:hover {
+nav .navigation-menu ul li:first-child a,
+nav .navigation-menu ul li.active a {
   color: var(--primary-color);
 }
 
-nav .navigation-menu ul li a:hover::before {
+nav .navigation-menu ul li:first-child a::before,
+nav .navigation-menu ul li.active a::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -120,7 +132,7 @@ nav .navigation-buttons ul li {
 
 header .bottom-border {
   opacity: 0.4;
-  border: 2px solid #dce4ff;
+  border: 2px solid var(--border-color);
 }
 
 nav .logo {
@@ -132,16 +144,30 @@ nav .navigation-buttons .btn {
   box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
   padding: 14px 31px 13px 31px;
-  color: #e5e5e5;
   transition: all 0.2s ease-in-out;
+  font-family: var(--secondary-color);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+
+  color: var(--white-color);
 }
 
-main .nft-banner {
+main {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nft-banner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "item-1 item-2 item-3";
-  align-items: center;
-  column-gap: 14.85px;
+  column-gap: 15px;
+  align-items: end;
+  max-height: 749px;
 }
 
 .item-1 {
@@ -156,11 +182,13 @@ main .nft-banner {
   grid-area: item-3;
 }
 
-main .nft-banner .banner-left {
-  padding-top: 154px;
+.nft-banner .banner-left {
+  /* padding-top: 154px; */
+  min-width: 408px;
+  max-height: 587px;
 }
 
-main .nft-banner .banner-left .head-section h2 {
+.nft-banner .banner-left .head-section h2 {
   font-family: "GalanoGrotesqueAltBold";
   font-size: 58px;
   line-height: 114.5%;
@@ -172,7 +200,7 @@ span {
   color: var(--primary-color);
 }
 
-main .nft-banner .banner-left .head-section p {
+.nft-banner .banner-left .head-section p {
   padding-top: 30.41px;
   font-family: var(--secondary-font-family);
   font-style: normal;
@@ -183,62 +211,87 @@ main .nft-banner .banner-left .head-section p {
   color: var(--secondary-color);
 }
 
-main .nft-banner .banner-left .head-section .collection {
+.nft-banner .banner-left .head-section .collection {
   padding-top: 3.349rem;
+  box-sizing: border-box;
 }
 
-main .nft-banner .banner-left .head-section .collection a {
+.nft-banner .banner-left .head-section .collection a {
   text-decoration: none;
   background: var(--primary-color);
   box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
-  padding: 22px 51px 22px 34px;
-  color: #e5e5e5;
+  padding: 22px 0 22px 34px;
+  font-family: var(--secondary-font-family);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: var(--white-color);
 }
 
-/* main .nft-banner .banner-left .head-section .collection .arrow {
-  padding: 1.804rem 1.652rem 1.804rem;
-} */
+.nft-banner .banner-left .head-section .collection span {
+  margin-left: 14px;
+  padding-right: 34px;
+}
 
-main .nft-banner .banner-left .head-section .last-section {
+.nft-banner .banner-left .head-section .last-section {
+  padding-top: 120px;
+}
+
+.nft-banner .banner-left .head-section .last-section p {
   font-family: var(--secondary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 96%;
   color: #000000;
-  padding-top: 128px;
 }
 
-main .nft-banner .banner-left .head-section .social-media-group {
+.nft-banner .banner-left .head-section .social-media-group {
   margin-top: 22px;
 }
 
-main .nft-banner .banner-right {
-  padding-top: 154px;
-  max-width: 100%;
-  max-height: 100%;
+.nft-banner .banner-right {
+  /* padding-top: 164px; */
+  max-width: 344px;
+  max-height: 578px;
 }
 
-main .nft-banner .banner-right .nft-card {
+.nft-banner .banner-right .nft-card {
   background: #faffff;
   box-shadow: 0px 43px 90px -16px rgba(44, 181, 185, 0.14);
   border-radius: 31px;
+  box-sizing: border-box;
 }
 
-main .nft-banner .banner-right .nft-bid-area {
-  background: #e8ffff;
+.nft-banner .banner-right .nft-card .card-title {
+  padding-top: 34px;
+  padding-left: 37px;
+  font-family: "GalanoGrotesqueAltBold";
+  font-size: 23px;
+  line-height: 173%;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  color: var(--secondary-color);
+}
+
+.nft-banner .banner-right .nft-bid-area {
+  background: var(--nft-card-bg-color);
   border-radius: 16px;
+  margin: 15px 37px 25px 37px;
+  box-sizing: border-box;
 }
 
-main .nft-banner .banner-right .nft-bid-area h5 {
+.nft-banner .banner-right .nft-bid-area h5 {
   font-family: var(--secondary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 96%;
   color: var(--secondary-color);
-  padding: 18px 154px 0 24px;
+  padding: 18px 0 0 24px;
 }
 
 ul {
@@ -249,42 +302,28 @@ a {
   text-decoration: none;
 }
 
-main .nft-banner .banner-right .nft-card .card-title {
-  padding: 34px 78px 0 37px;
-  font-family: "GalanoGrotesqueAltBold";
-  font-size: 23px;
-  line-height: 173%;
-  white-space: nowrap;
-  letter-spacing: -0.01em;
-  color: var(--secondary-color);
-}
-
-main .nft-banner .banner-right .nft-bid-area {
-  margin: 15px 37px 25px 37px;
-}
-
-main .nft-banner .banner-right .card-details ul {
+.nft-banner .banner-right .card-details ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 14px 0;
+  padding: 14px 0 19px 0;
 }
 
-main .nft-banner .banner-right .card-details ul li .ethereum {
+.nft-banner .banner-right .card-details ul li .ethereum {
   padding: 0 10px 0 24px;
 }
 
-main .nft-banner .banner-right .nft-card-actions ul {
+.nft-banner .banner-right .nft-card-actions ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-main .nft-banner .banner-right .nft-card-actions ul li {
+.nft-banner .banner-right .nft-card-actions ul li {
   margin-bottom: 34px;
 }
 
-main .nft-banner .banner-right .nft-card-actions ul li a {
+.nft-banner .banner-right .nft-card-actions ul li a {
   font-family: var(--secondary-font-family);
   font-style: normal;
   font-weight: 600;
@@ -293,21 +332,25 @@ main .nft-banner .banner-right .nft-card-actions ul li a {
   letter-spacing: 0.01em;
 }
 
-main .nft-banner .banner-right .nft-card-actions ul .bid {
+.nft-banner .banner-right .nft-card-actions ul .bid {
   text-decoration: none;
   background: var(--primary-color);
   box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
-  padding: 12px 10px;
-  color: #e5e5e5;
+  padding: 11.44px 29.91px 11.44px 30.79px;
   margin: 0 28px 35px;
+  color: var(--white-color);
 }
 
-main .nft-banner .banner-right .contribution-section {
+.nft-banner .banner-right .nft-card-actions ul .share-link {
+  color: var(--primary-color);
+}
+
+.nft-banner .banner-right .contribution-section {
   margin-top: 43px;
 }
 
-main .nft-banner .banner-right .contribution-section h3 {
+.nft-banner .banner-right .contribution-section h3 {
   font-family: "GalanoGrotesqueAltBold";
   font-size: 23px;
   line-height: 173%;
@@ -315,33 +358,574 @@ main .nft-banner .banner-right .contribution-section h3 {
   color: var(--secondary-color);
 }
 
-main .nft-banner .banner-right .contribution-section .image-1 {
-  padding-top: 15px;
+.nft-banner .banner-right .contribution-section .image-1 {
+  margin-top: 14px;
 }
 
-main .nft-banner .banner-right .contribution-section .image-2 {
-  margin-top: 24.5px;
+.nft-banner .banner-right .contribution-section .image-2 {
+  margin-top: 24px;
 }
 
-main .nft-banner .banner-right .fueler-section {
+.nft-banner .banner-right .fueler-section {
   margin-top: 75px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-main .nft-banner .banner-right .fueler-section p {
+.nft-banner .banner-right .fueler-section p {
   font-family: var(--secondary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 96%;
-  color: var(--secondary-color);
+  line-height: 17.28px;
+  color: var(--power-text-color);
+  text-align: end;
 }
 
-main .nft-banner .banner-right .fueler-section .fueler-sec-paragraph {
+.nft-banner .banner-right .fueler-section .fueler-sec-paragraph {
+  font-family: var(--secondary-font-family);
   color: var(--primary-color);
+  font-weight: 700;
 }
 
-main .nft-banner .banner-right .fueler-section .setting-icon {
+.nft-banner .banner-right .fueler-section .setting-icon {
   display: inline-block;
   max-width: 20.62px;
   max-height: 19.8px;
+}
+
+.nft-banner .banner-right .fueler-section .setting-icon img {
+  margin: -4px;
+}
+
+nav.mobile-nav,
+.mobile-menu-container {
+  display: none;
+}
+
+@media screen and (max-width: 320px) {
+  header {
+    margin-top: 0;
+  }
+
+  nav.desktop__navbar {
+    display: none;
+  }
+
+  header .bottom-border {
+    display: none;
+  }
+
+  nav.mobile-nav {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 100%;
+    background: var(--navigation-bar-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: all 400ms ease;
+  }
+
+  .mobile-menu-container.active {
+    left: 0;
+  }
+
+  .mobile-menu-container .close-icon {
+    position: fixed;
+    top: 22px;
+    left: 90%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+  }
+
+  .mobile-menu-container.active .close-icon {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu-container ul li {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .mobile-menu-container ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  nav .logo {
+    padding: 15px 10px 12px 10px;
+  }
+
+  nav .navigation-buttons ul li {
+    padding: 15px 10px 12px 10px;
+  }
+
+  .mobile-menu-container ul li #btn {
+    background: var(--primary-color);
+    box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
+    border-radius: 100px;
+    padding: 14px 31px 13px 31px;
+    transition: all 0.2s ease-in-out;
+    font-family: var(--secondary-color);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+
+    color: #ffffff;
+  }
+
+  .nft-banner {
+    grid-template-areas:
+      "item-1"
+      "item-2"
+      "item-3";
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: unset;
+  }
+
+  .nft-banner .banner-left {
+    padding: 32px 0;
+    min-width: 100%;
+    max-height: unset;
+  }
+
+  .nft-banner .banner-left .head-section h2 {
+    text-align: center;
+    font-size: 45px;
+  }
+
+  .nft-banner .banner-left .head-section p {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .nft-banner .banner-left .head-section .collection {
+    text-align: center;
+  }
+
+  .nft-banner .banner-left .head-section .last-section {
+    text-align: center;
+    padding-top: 70px;
+  }
+
+  .nft-banner .banner-left .head-section .social-media-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nft-banner .hero-section {
+    padding: 16px 0;
+  }
+
+  .nft-banner .hero-section .hero {
+    text-align: center;
+  }
+
+  .nft-banner .hero-section .hero img {
+    width: 100%;
+  }
+
+  .nft-banner .banner-right {
+    padding: 32px 0;
+    max-height: unset;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .nft-banner .banner-right .contribution-section {
+    max-width: 100%;
+    padding: 16px 16px;
+    margin: 43px auto 0px auto;
+  }
+
+  .nft-banner .banner-right .fueler-section {
+    margin-top: 0px;
+  }
+
+  .nft-banner .banner-right .fueler-section p {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  header {
+    margin-top: 0;
+  }
+
+  nav.desktop__navbar {
+    display: none;
+  }
+
+  header .bottom-border {
+    display: none;
+  }
+
+  nav.mobile-nav {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .mobile-menu-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 100%;
+    background: var(--navigation-bar-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: all 400ms ease;
+  }
+
+  .mobile-menu-container.active {
+    left: 0;
+  }
+
+  .mobile-menu-container .close-icon {
+    position: fixed;
+    top: 22px;
+    left: 90%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+  }
+
+  .mobile-menu-container.active .close-icon {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu-container ul li {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .mobile-menu-container ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  nav .logo {
+    padding: 15px 10px 12px 10px;
+  }
+
+  nav .navigation-buttons ul li {
+    padding: 15px 10px 12px 10px;
+  }
+
+  .mobile-menu-container ul li #btn {
+    background: var(--primary-color);
+    box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
+    border-radius: 100px;
+    padding: 14px 31px 13px 31px;
+    transition: all 0.2s ease-in-out;
+    font-family: var(--secondary-color);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+
+    color: var(--white-color);
+  }
+
+  .nft-banner {
+    grid-template-areas:
+      "item-1"
+      "item-2"
+      "item-3";
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    max-height: unset;
+    margin: 0 auto;
+  }
+
+  .nft-banner .banner-left {
+    padding: 32px 16px;
+    min-width: 100%;
+    max-height: unset;
+  }
+
+  .nft-banner .banner-left .head-section h2 {
+    text-align: center;
+    font-size: 48px;
+  }
+
+  .nft-banner .banner-left .head-section p {
+    text-align: center;
+  }
+
+  .nft-banner .banner-left .head-section .collection {
+    text-align: center;
+  }
+
+  .nft-banner .banner-left .head-section .last-section {
+    text-align: center;
+    padding-top: 70px;
+  }
+
+  .nft-banner .banner-left .head-section .social-media-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nft-banner .hero-section {
+    padding: 0 16px;
+    max-width: 100%;
+  }
+
+  .nft-banner .hero-section .hero {
+    text-align: center;
+  }
+
+  .nft-banner .hero-section .hero img {
+    max-width: 90%;
+  }
+
+  .nft-banner .banner-right {
+    padding: 16px;
+    max-height: unset;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: unset;
+  }
+
+  .nft-banner .banner-right .contribution-section {
+    max-width: 100%;
+    padding: 16px 16px;
+    margin: 43px auto 0px auto;
+  }
+
+  .nft-banner .banner-right .fueler-section {
+    margin-top: 0px;
+  }
+
+  .nft-banner .banner-right .fueler-section p {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    margin-top: 0;
+  }
+
+  nav.desktop__navbar {
+    display: none;
+  }
+
+  header .bottom-border {
+    display: none;
+  }
+
+  nav.mobile-nav {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 100%;
+    background: var(--navigation-bar-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: all 400ms ease;
+  }
+
+  .mobile-menu-container.active {
+    left: 0;
+  }
+
+  .mobile-menu-container .close-icon {
+    position: fixed;
+    top: 22px;
+    left: 90%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+  }
+
+  .mobile-menu-container.active .close-icon {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu-container ul li {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .mobile-menu-container ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  nav .logo {
+    padding: 15px 10px 12px 10px;
+  }
+
+  nav .navigation-buttons ul li {
+    padding: 15px 10px 12px 10px;
+  }
+
+  .mobile-menu-container ul li #btn {
+    background: var(--primary-color);
+    box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
+    border-radius: 100px;
+    padding: 14px 31px 13px 31px;
+    transition: all 0.2s ease-in-out;
+    font-family: var(--secondary-color);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+
+    color: var(--white-color);
+  }
+
+  .nft-banner {
+    grid-template-areas:
+      "item-1"
+      "item-2"
+      "item-3";
+    grid-template-columns: 1fr;
+    max-height: unset;
+  }
+
+  .nft-banner .banner-left {
+    padding: 32px 16px;
+  }
+
+  .nft-banner .banner-left .head-section h2 {
+    text-align: center;
+  }
+
+  .nft-banner .banner-left .head-section p {
+    text-align: center;
+  }
+
+  .nft-banner .banner-left .head-section .collection {
+    text-align: center;
+  }
+
+  .nft-banner .banner-left .head-section .last-section {
+    text-align: center;
+    padding-top: 70px;
+  }
+
+  .nft-banner .banner-left .head-section .social-media-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nft-banner .hero-section {
+    padding: 0 16px;
+  }
+
+  .nft-banner .hero-section .hero {
+    text-align: center;
+  }
+
+  .nft-banner .banner-right {
+    padding: 32px 16px;
+    max-height: unset;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .nft-banner .banner-right .contribution-section {
+    max-width: 100%;
+    padding: 16px 16px;
+    margin: 43px auto 0px auto;
+  }
+
+  .nft-banner .banner-right .fueler-section {
+    margin-top: 0px;
+  }
+
+  .nft-banner .banner-right .fueler-section p {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  header {
+    margin-top: 0;
+  }
+
+  nav.desktop__navbar {
+    padding: 16px;
+  }
+
+  .nft-banner {
+    padding: 16px;
+    max-height: unset;
+  }
+
+  .nft-banner .banner-left {
+    min-width: 340px;
+  }
+
+  .nft-banner .hero-section .hero img {
+    width: 100%;
+  }
+
+  .nft-banner .banner-left .head-section h2 {
+    font-size: 50px;
+  }
+
+  .nft-banner .banner-left .head-section p {
+    font-size: 18px;
+  }
 }
