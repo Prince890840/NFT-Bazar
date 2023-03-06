@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "GalanoGrotesqueAltRegular";
-  src: url(/assets/fonts/GalanoGrotesqueAltRegular.otf) format("truetype");
+  src: url(../fonts/GalanoGrotesqueAltRegular.otf) format("truetype");
 }
 
 @font-face {
   font-family: "GalanoGrotesqueAltBold";
-  src: url(/assets/fonts/GalanoGrotesqueAltBold.otf) format("truetype");
+  src: url(../fonts/GalanoGrotesqueAltBold.otf) format("truetype");
   font-weight: 700;
 }
 
