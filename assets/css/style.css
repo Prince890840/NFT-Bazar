@@ -165,7 +165,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "item-1 item-2 item-3";
-  column-gap: 15px;
+  gap: 14.85px 14.15px;
   align-items: end;
   max-height: 749px;
 }
@@ -337,8 +337,8 @@ a {
   background: var(--primary-color);
   box-shadow: 0px 12px 30px rgba(45, 202, 207, 0.33);
   border-radius: 100px;
-  padding: 11.44px 29.91px 11.44px 30.79px;
-  margin: 0 28px 35px;
+  padding: 12px 30px 12px 31px;
+  margin: 0 28px 0 37px;
   color: var(--white-color);
 }
 
