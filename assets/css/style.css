@@ -1,5 +1,3 @@
-/* https://www.cufonfonts.com/font/galano-grotesque-alt#google_vignette */
-
 @font-face {
   font-family: "GalanoGrotesqueAltRegular";
   src: url(../fonts/GalanoGrotesqueAltRegular.otf) format("truetype");
@@ -35,6 +33,14 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   background: var(--body-background-color);
   font-family: "GalanoGrotesqueAltRegular";
@@ -45,6 +51,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/**********/
+/* header */
+/**********/
 
 header {
   height: 100%;
@@ -155,6 +165,10 @@ nav .navigation-buttons .btn {
   color: var(--white-color);
 }
 
+/****************/
+/* main-section */
+/****************/
+
 main {
   height: 100%;
   max-width: 1200px;
@@ -183,7 +197,6 @@ main {
 }
 
 .nft-banner .banner-left {
-  /* padding-top: 154px; */
   min-width: 408px;
   max-height: 587px;
 }
@@ -254,7 +267,6 @@ span {
 }
 
 .nft-banner .banner-right {
-  /* padding-top: 164px; */
   max-width: 344px;
   max-height: 578px;
 }
@@ -292,14 +304,6 @@ span {
   line-height: 96%;
   color: var(--secondary-color);
   padding: 18px 0 0 24px;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 .nft-banner .banner-right .card-details ul {
@@ -403,7 +407,11 @@ nav.mobile-nav,
   display: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
+  .wrapper {
+    max-width: 750px;
+  }
+
   header {
     margin-top: 0;
   }
@@ -461,7 +469,7 @@ nav.mobile-nav,
   }
 
   .mobile-menu-container ul li {
-    margin: 30px 0;
+    margin: 26px 0;
     text-align: center;
   }
 
@@ -503,18 +511,19 @@ nav.mobile-nav,
     grid-template-columns: 1fr;
     max-width: 100%;
     margin: 0 auto;
+    gap: 0;
     max-height: unset;
   }
 
   .nft-banner .banner-left {
-    padding: 32px 0;
+    padding: 16px;
     min-width: 100%;
     max-height: unset;
   }
 
   .nft-banner .banner-left .head-section h2 {
     text-align: center;
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .nft-banner .banner-left .head-section p {
@@ -538,7 +547,7 @@ nav.mobile-nav,
   }
 
   .nft-banner .hero-section {
-    padding: 16px 0;
+    padding: 0 16px;
   }
 
   .nft-banner .hero-section .hero {
@@ -549,11 +558,17 @@ nav.mobile-nav,
     width: 100%;
   }
 
+  .nft-banner .banner-right .nft-card .card-title {
+    padding-top: 25px;
+    padding-left: 35px;
+    font-size: 20px;
+  }
+
   .nft-banner .banner-right {
-    padding: 32px 0;
     max-height: unset;
     margin: 0 auto;
-    max-width: 100%;
+    min-width: 100%;
+    padding: 16px;
   }
 
   .nft-banner .banner-right .contribution-section {
@@ -564,14 +579,24 @@ nav.mobile-nav,
 
   .nft-banner .banner-right .fueler-section {
     margin-top: 0px;
+    font-size: 40px;
   }
 
   .nft-banner .banner-right .fueler-section p {
     text-align: center;
+    font-size: 20px;
+  }
+
+  .nft-banner .banner-right .nft-bid-area h5 {
+    font-size: 15px;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    max-width: 800px;
+  }
+
   header {
     margin-top: 0;
   }
@@ -630,7 +655,7 @@ nav.mobile-nav,
   }
 
   .mobile-menu-container ul li {
-    margin: 30px 0;
+    margin: 26px 0;
     text-align: center;
   }
 
@@ -672,6 +697,7 @@ nav.mobile-nav,
     grid-template-columns: 1fr;
     max-width: 100%;
     max-height: unset;
+    gap: 0;
     margin: 0 auto;
   }
 
@@ -688,6 +714,8 @@ nav.mobile-nav,
 
   .nft-banner .banner-left .head-section p {
     text-align: center;
+    font-size: 24px;
+    line-height: 140%;
   }
 
   .nft-banner .banner-left .head-section .collection {
@@ -722,7 +750,7 @@ nav.mobile-nav,
     padding: 16px;
     max-height: unset;
     margin: 0 auto;
-    max-width: 100%;
+    min-width: 85%;
     max-height: unset;
   }
 
@@ -736,12 +764,20 @@ nav.mobile-nav,
     margin-top: 0px;
   }
 
+  .nft-banner .banner-right .contribution-section h3 {
+    text-align: center;
+  }
+
   .nft-banner .banner-right .fueler-section p {
     text-align: center;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    max-width: 1050px;
+  }
+
   header {
     margin-top: 0;
   }
@@ -799,7 +835,7 @@ nav.mobile-nav,
   }
 
   .mobile-menu-container ul li {
-    margin: 30px 0;
+    margin: 26px 0;
     text-align: center;
   }
 
@@ -881,13 +917,17 @@ nav.mobile-nav,
     padding: 32px 16px;
     max-height: unset;
     margin: 0 auto;
-    max-width: 100%;
+    min-width: 80%;
   }
 
   .nft-banner .banner-right .contribution-section {
     max-width: 100%;
     padding: 16px 16px;
     margin: 43px auto 0px auto;
+  }
+
+  .nft-banner .banner-right .contribution-section h3 {
+    text-align: center;
   }
 
   .nft-banner .banner-right .fueler-section {
@@ -900,16 +940,12 @@ nav.mobile-nav,
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
-  header {
-    margin-top: 0;
-  }
-
   nav.desktop__navbar {
-    padding: 16px;
+    padding: 0 16px;
   }
 
   .nft-banner {
-    padding: 16px;
+    padding: 0 16px;
     max-height: unset;
   }
 
