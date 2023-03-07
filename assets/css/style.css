@@ -681,20 +681,9 @@ nav.mobile-nav,
     gap: 0;
   }
 
+  .mobile-menu-container ul li #sign-up,
   .mobile-menu-container ul li #btn {
-    background: var(--primary-color);
-    box-shadow: -3px 8px 24px rgba(45, 202, 207, 0.33);
-    border-radius: 100px;
-    padding: 14px 31px 13px 31px;
-    transition: all 0.2s ease-in-out;
-    font-family: var(--secondary-color);
-    font-style: normal;
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 18px;
-    letter-spacing: 0.01em;
-
-    color: var(--white-color);
+    display: none;
   }
 
   .nft-banner {
